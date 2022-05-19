@@ -19,10 +19,13 @@ grant all on *.* to 'dbuser'@'%';
 docker-compose exec web bash -l
 cd /rails-app/subject_api
 bundle exec rails db:migrate
+
 # JWT用のキーを作成
 mkdir auth && cd $_
 openssl genrsa 2024 > service.key
-# .gitignoreに以下を追加
+## .gitignoreに以下を追加
+/auth
+
 # rails API起動
 bundle exec rails s -b "0.0.0.0" -p 3000
 ```
