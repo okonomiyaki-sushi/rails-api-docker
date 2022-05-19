@@ -16,8 +16,10 @@ create user 'dbuser'@'%' identified by 'dbpass';
 grant all on *.* to 'dbuser'@'%';
 
 # DBマイグレーション
-docker-compose exec web bash -l
+docker-compose exec subject_web bash -l
 cd /rails-app/subject_api
+bundle install
+bundle exec rails db:create
 bundle exec rails db:migrate
 
 # JWT用のキーを作成
