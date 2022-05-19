@@ -144,8 +144,10 @@ bundle exec rails g model purchase trade_id:bigint seller_id:bigint buyer_id:big
 ```
 
 ## JWT設定
+```
 mkdir auth && cd $_
 openssl genrsa 2024 > service.key
+```
 
 .gitignoreに以下を追加
 ```
